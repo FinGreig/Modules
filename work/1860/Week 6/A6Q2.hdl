@@ -1,0 +1,8 @@
+CHIP A6Q2 {
+    IN Q,D,M;
+    OUT G;
+
+    PARTS:
+    Or(a= Q, b= D, out= orQD);
+    And(a= orQD, b= M, out= G);
+}
