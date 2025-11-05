@@ -1,6 +1,6 @@
-load DecoderSegment.hdl,
-output-file DecoderSegment.out,
-output-list in%D2.2.2 g%B2.1.2;
+load Decoder.hdl,
+output-file Decoder.out,
+output-list in%D2.2.2 a%B2.1.2 b%B2.1.2 c%B2.1.2 d%B2.1.2 e%B2.1.2 f%B2.1.2 g%B2.1.2;
 set in 0,
 eval,
 output;
