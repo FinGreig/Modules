@@ -1,0 +1,17 @@
+CHIP DecoderSegment {
+    IN in[4];
+    OUT a;
+
+    PARTS:
+    Not(in= in[0], out= not1);
+    Not(in= in[1], out= not2);
+    Not(in= in[2], out= not3);
+    Not(in= in[3], out= not4);
+    Or(a= in[0], b= not4, out= in1ornot4);
+    Or(a= in[0], b= not2, out= in1ornot2);
+    Or(a= in1ornot2, b= in[3], out= in1or3ornot2);
+    Or(a= in[1], b= in[3], out= in2or3);
+    Or(a= in2or3, b=not4, out= in2or3ornot4);
+    And(a= in1ornot4, b= in1or3ornot2, out= partiala);
+    And(a= partiala, b= in2or3ornot4, out= a);
+}
